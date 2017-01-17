@@ -29,7 +29,7 @@
 
     // Helper methods & vars:
     var $d = global.document,
-        $ = (tryRequire('jQuery') || tryRequire('Zepto') || tryRequire('ender') || $d),
+        $ = (tryRequire('jquery') || tryRequire('zepto') || tryRequire('ender') || $d),
         $$, // Element selector function
         $b, // Event binding function
         $u, // Event unbinding function
@@ -298,6 +298,7 @@
                     // Inject either keyCode or ctrl/meta/shift/altKey into keyCombo
                     if (jwertyCodeFragment[z] in _keys.mods) {
                         keyCombo[_modProps[_keys.mods[jwertyCodeFragment[z]]]] = true;
+                        keyCombo.keyCode = _keys.mods[jwertyCodeFragment[z]];
                     } else if (jwertyCodeFragment[z] in _keys.keys) {
                         keyCombo.keyCode = _keys.keys[jwertyCodeFragment[z]];
                     } else {
